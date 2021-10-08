@@ -45,7 +45,7 @@ class DishDetail extends Component{
             return (
                 <li key={comment.id}>
                     <p>{comment.comment}</p>
-                    <p>-- {comment.author},
+                    <p>-- {comment.author}
                     &nbsp;
                     {new Intl.DateTimeFormat('en-US', {
                         year: 'numeric',
@@ -81,9 +81,11 @@ class DishDetail extends Component{
         const dishComment = this.renderComments(dish.comments);
 
         return (
+            <div className = 'container'>
             <div className='row'>
                 {dishItem}
                 {dishComment}
+            </div>
             </div>
         )
     }
