@@ -47,22 +47,10 @@ import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbIte
 
 
     const DishDetail = (props) => {
-        const dish = props.dish
-        // const commnts = props.dish.comments        
+        const dish = props.dish  
         if (dish == null) {
             return (<div></div>);
         }
-
-        // const comments = (comment) => {
-        //     return(
-        //         <div  key={comment.id} className = "col-12 col-md-5 m-1 ">
-        //             <RenderComments comments = {props.dish.comments}/>
-        //         </div>
-        //     );
-        // };
-
-        // const dishItem = RenderDish(dish);
-        // const dishComment = RenderComments(dish.comments);
 
         return (
             <div className = 'container'>
