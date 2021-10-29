@@ -1,8 +1,6 @@
-import React, {Component} from "react";
-import { Link } from "react-router-dom";
-import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Col, Label, Modal, ModalBody, ModalHeader, Row } from "reactstrap";
-// import Comment from "./CommentForm";
+import React, {Component} from 'react';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Button, Col, Label, Modal, ModalBody, ModalHeader, Row  } from 'reactstrap';
 
 const required = (val) => val && val.length; 
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -139,81 +137,5 @@ class Comment extends Component{
 
 
 
-}
-
-
-    function RenderDish({dish}) {
-        return (
-            <div className='col-12 col-md-5 m-1'>
-                <Card>
-                    <CardImg width="100%" src={dish.image} alt={dish.name} />
-                    <CardBody>
-                        <CardTitle> {dish.name}</CardTitle>
-                        <CardText> {dish.description} </CardText>
-                    </CardBody>
-                </Card>
-            </div>   
-        );
-    }
-
-    function RenderComments({comments}){
-        
-        const cmnts = comments.map((comment) => {
-            return (
-                <li key={comment.id}>
-                    <p>{comment.comment}</p>
-                    <p>-- {comment.author}
-                    &nbsp;
-                    {new Intl.DateTimeFormat('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: '2-digit'
-                    }).format(new Date(comment.date))}
-                    </p>
-                </li>
-            );
-        });
-        return (
-            <div className='col-12 col-md-5 m-1'>
-                <h4> Comments </h4>
-                <ul className='list-unstyled'>
-                    {cmnts}
-                </ul>
-
-            </div>
-        );
-    }
-
-
-    const DishDetail = (props) => {
-        const dish = props.dish  
-        if (dish == null) {
-            return (<div></div>);
-        }
-
-        return (
-            <div className = 'container'>
-                <div className = "row">
-                    <Breadcrumb>
-                        <BreadcrumbItem><Link to = '/menu'>Menu</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
-                    </Breadcrumb>
-                    <div className="col-12">
-                        <h3>{props.dish.name}</h3>
-                        <hr/>
-                    </div>
-                </div>
-                <div className='row'>
-                    <RenderDish dish = {dish}/>
-                    
-                        <RenderComments comments = {props.comments}/>
-                        <Comment/>
-                    
-                </div>
-            </div>
-        )
-    }
-
-
-
-export default DishDetail;
+} 
+export default Comment;
