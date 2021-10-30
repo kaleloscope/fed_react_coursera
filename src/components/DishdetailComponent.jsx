@@ -28,7 +28,8 @@ class Comment extends Component{
     }
 
     handleSubmitComment(values){
-        alert('Current state is: ' + JSON.stringify(values))
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+
     }
 
     render(){
@@ -156,7 +157,7 @@ class Comment extends Component{
         );
     }
 
-    function RenderComments({comments}){
+    function RenderComments({comments, addComment, dishId}){
         
         const cmnts = comments.map((comment) => {
             return (
@@ -179,7 +180,7 @@ class Comment extends Component{
                 <ul className='list-unstyled'>
                     {cmnts}
                 </ul>
-                <Comment/>
+                <Comment dishId={dishId} addComment={addComment}/>
 
             </div>
         );
@@ -206,8 +207,7 @@ class Comment extends Component{
                 </div>
                 <div className='row'>
                     <RenderDish dish = {dish}/>
-                    
-                        <RenderComments comments = {props.comments}/>
+                    <RenderComments comments = {props.comments} addComment = {props.addComment} dishId = {props.dish.id}/>
                         
                     
                 </div>
