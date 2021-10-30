@@ -40,7 +40,7 @@ class Comment extends Component{
             </Button>
 
             <Modal isOpen = {this.state.isModalOpen} toggle={this.handleOpenModal}>
-                <ModalHeader toggle ={this.handleOpenModal}>{" "}Submit Comment{" "}</ModalHeader>
+                <ModalHeader toggle ={this.handleOpenModal}>Submit Comment</ModalHeader>
                 <ModalBody>
                     <LocalForm onSubmit = {(values) => this.handleSubmitComment(values)}>
                         <Row className = "form-group">
@@ -179,6 +179,7 @@ class Comment extends Component{
                 <ul className='list-unstyled'>
                     {cmnts}
                 </ul>
+                <Comment/>
 
             </div>
         );
@@ -207,7 +208,7 @@ class Comment extends Component{
                     <RenderDish dish = {dish}/>
                     
                         <RenderComments comments = {props.comments}/>
-                        <Comment/>
+                        
                     
                 </div>
             </div>
