@@ -40,11 +40,11 @@ class Comment extends Component{
             </Button>
 
             <Modal isOpen = {this.state.isModalOpen} toggle={this.handleOpenModal}>
-                <ModalHeader toggle ={this.handleOpenModal}>Submit Comment</ModalHeader>
+                <ModalHeader toggle ={this.handleOpenModal}>{" "}Submit Comment{" "}</ModalHeader>
                 <ModalBody>
                     <LocalForm onSubmit = {(values) => this.handleSubmitComment(values)}>
                         <Row className = "form-group">
-                            <Label htmlFor = "rating" >Rating</Label>
+                            <Label htmlFor = "rating" md={12}>Rating</Label>
                             <Col md={12}>
                                     <Control.select model = ".rating"
                                         className="form-control"
@@ -72,7 +72,7 @@ class Comment extends Component{
                                 </Col> 
                         </Row>
                         <Row className = "form-group">
-                            <Label htmlFor = "author" >Your Name</Label>
+                            <Label htmlFor = "author" md={12}>Your Name</Label>
                             <Col md={12}>
                                     <Control.text model = ".author"
                                         className="form-control"
